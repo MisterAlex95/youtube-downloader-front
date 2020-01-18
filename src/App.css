@@ -1,3 +1,7 @@
+html {
+  margin: 5px;
+}
+
 .App {
   text-align: center;
   display: flex;
