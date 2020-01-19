@@ -119,17 +119,36 @@ input:focus {
   border: 2px solid lightcoral;
   box-shadow: 4px 4px lightcoral;
   border-radius: 4px;
-  height: 400px;
+  height: 350px;
   margin-bottom: 15px;
 }
 
 .results {
   display: flex;
-  justify-content: center;
   align-items: center;
   border: 2px solid lightcoral;
   box-shadow: 4px 4px lightcoral;
   border-radius: 4px;
-  height: 150px;
+  height: 175px;
   margin-bottom: 15px;
+  overflow: scroll;
+  padding: 10px;
+  flex-direction: row;
+}
+
+.video-thumbnail {
+  width: 150px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: small;
+  padding: 5px;
+}
+
+.video-thumbnail:hover {
+  background-color: lightcoral;
+  color: white;
+  cursor: pointer;
 }

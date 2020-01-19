@@ -1,9 +1,9 @@
 import React, { useState, useReducer } from "react";
-import { Searchbar, Tools, VideoList } from "./components";
+import { Searchbar, Tools, VideoList, Viewer } from "./components";
 import ThemeContext from "./contexts/Themes";
 
 import GlobalContext from "./contexts/";
-import { searchReducer } from "./modules/index";
+import { searchReducer, videoReducer } from "./modules/index";
 
 import "./reset.css";
 import "./App.css";
@@ -11,6 +11,10 @@ import "./App.css";
 function App() {
   const [themes, Context] = ThemeContext;
   const [darkTheme, setDarkTheme] = useState(false);
+  const [videoState, videoDispatch] = useReducer(
+    videoReducer.reducer,
+    videoReducer.initialState
+  );
   const [searchState, searchDispatch] = useReducer(
     searchReducer.reducer,
     searchReducer.initialState
@@ -21,11 +25,13 @@ function App() {
   };
 
   let states = {
-    search: searchState
+    search: searchState,
+    video: videoState
   };
 
   let dispatchs = {
-    search: searchDispatch
+    search: searchDispatch,
+    video: videoDispatch
   };
 
   return (
@@ -34,7 +40,7 @@ function App() {
         <div className="App">
           <Searchbar />
           <Tools />
-          <div className="viewer"></div>
+          <Viewer />
           <VideoList />
           <span onClick={switchTheme}>{darkTheme ? "🌞" : "🌙"}</span>
         </div>

@@ -1,6 +1,7 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext } from "react";
 import ThemeContext from "../contexts/Themes";
 import GlobalContext from "../contexts/";
+import Video from "./Video";
 
 function VideoList() {
   const [, themeContext] = ThemeContext;
@@ -13,17 +14,10 @@ function VideoList() {
       className="results"
       style={{ backgroundColor: theme.background, color: theme.fontColor }}
     >
-      {searchState && searchState.videos.length === 0 && "Empty"}
       {searchState &&
         searchState.videos.length > 0 &&
         searchState.videos.map((video, index) => {
-          return (
-            <img
-              key={index}
-              alt="test"
-              src={video.snippet.thumbnails.default.url}
-            />
-          );
+          return <Video video={video} key={index} />;
         })}
     </div>
   );
