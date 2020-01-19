@@ -1,1 +1,4 @@
 export const SELECT_VIDEO = "SELECT_VIDEO";
+export const IS_DOWNLOADING = "IS_DOWNLOADING";
+export const DOWNLOADED = "DOWNLOADED";
+export const DOWNLOAD_ERROR = "DOWNLOAD_ERROR";

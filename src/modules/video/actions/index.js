@@ -1,3 +1,4 @@
 import selectVideo from "./selectVideo";
+import downloadVideo from "./downloadVideo";
 
-export { selectVideo };
+export { selectVideo, downloadVideo };
