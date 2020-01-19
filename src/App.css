@@ -13,12 +13,31 @@ html {
 
 .searchbar {
   border: 2px solid lightcoral;
+  box-shadow: 4px 4px lightcoral;
   border-radius: 4px;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 15px;
+}
+
+.searchbar button {
+  display: flex;
+  border: 2px solid lightcoral;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  color: lightcoral;
+  font-weight: bold;
+  height: 54px;
+}
+
+.searchbar button:active {
+  border-color: rgb(175, 93, 93);
+  box-shadow: 4px 4px rgb(175, 93, 93);
+  transform: translateY(4px);
 }
 
 .searchbar input {
@@ -46,6 +65,7 @@ input:focus {
   justify-content: space-around;
   align-items: center;
   border: 2px solid lightcoral;
+  box-shadow: 4px 4px lightcoral;
   border-radius: 4px;
   margin-bottom: 15px;
 }
@@ -62,6 +82,7 @@ input:focus {
 .edition input {
   display: flex;
   border: 2px solid lightcoral;
+  box-shadow: 4px 4px lightcoral;
   border-radius: 4px;
   color: lightcoral;
   justify-content: center;
@@ -75,12 +96,20 @@ input:focus {
   margin: 10px;
   width: 50%;
   border: 2px solid lightcoral;
+  box-shadow: 4px 4px lightcoral;
   border-radius: 4px;
   justify-content: center;
   align-items: center;
   font-size: xx-large;
+  background-color: lightcoral;
   color: lightcoral;
   font-weight: bold;
+}
+
+.tools button:active {
+  border-color: rgb(175, 93, 93);
+  box-shadow: 4px 4px rgb(175, 93, 93);
+  transform: translateY(4px);
 }
 
 .viewer {
@@ -88,6 +117,7 @@ input:focus {
   justify-content: center;
   align-items: center;
   border: 2px solid lightcoral;
+  box-shadow: 4px 4px lightcoral;
   border-radius: 4px;
   height: 400px;
   margin-bottom: 15px;
@@ -98,6 +128,7 @@ input:focus {
   justify-content: center;
   align-items: center;
   border: 2px solid lightcoral;
+  box-shadow: 4px 4px lightcoral;
   border-radius: 4px;
   height: 150px;
   margin-bottom: 15px;
