@@ -9,6 +9,19 @@ function VideoList() {
   const theme = useContext(themeContext);
   const searchState = context.states.search;
 
+  if (searchState.fetching) {
+    return (
+      <div
+        className="results"
+        style={{ backgroundColor: theme.background, color: theme.fontColor }}
+      >
+        <div className="loader-wrapper">
+          <div className="loader"></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       className="results"
