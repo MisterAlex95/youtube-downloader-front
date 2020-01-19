@@ -8,6 +8,10 @@ function App() {
   const [themes, Context] = ThemeContext;
   const [darkTheme, setDarkTheme] = useState(false);
 
+  const switchTheme = () => {
+    setDarkTheme(!darkTheme);
+  };
+
   return (
     <Context.Provider value={darkTheme ? themes.dark : themes.light}>
       <div className="App">
@@ -15,13 +19,7 @@ function App() {
         <Tools />
         <div className="viewer"></div>
         <div className="results"></div>
-        <span
-          onClick={() => {
-            setDarkTheme(!darkTheme);
-          }}
-        >
-          {darkTheme ? "🌞" : "🌙"}
-        </span>
+        <span onClick={switchTheme}>{darkTheme ? "🌞" : "🌙"}</span>
       </div>
     </Context.Provider>
   );
