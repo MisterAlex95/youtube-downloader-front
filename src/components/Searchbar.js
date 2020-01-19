@@ -1,15 +1,15 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useContext } from "react";
 import Button from "./Button";
-import { reducer } from "../modules/search/reducers/";
 import { fetchVideos } from "../modules/search/actions/";
+import GlobalContext from "../contexts/";
 
 function Searchbar() {
   const [search, setSearch] = useState("");
-  const [, dispatch] = useReducer(reducer);
+  const context = useContext(GlobalContext);
 
   const launchFetchRequest = () => {
     if (search) {
-      fetchVideos(dispatch, { query: search });
+      fetchVideos(context.dispatchs.search, { query: search });
     }
   };
 

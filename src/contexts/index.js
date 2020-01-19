@@ -1,3 +1,8 @@
-import ThemeContext from "./Themes";
+import { createContext } from "react";
 
-export { ThemeContext };
+const GlobalContext = createContext({
+  state: {},
+  dispatch: {}
+});
+
+export default GlobalContext;
