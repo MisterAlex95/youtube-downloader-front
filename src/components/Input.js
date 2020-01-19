@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../contexts/";
 
 function Input(props) {
   const { placeholder } = props;
-  return <input placeholder={placeholder} />;
+  const [, context] = ThemeContext;
+
+  const theme = useContext(context);
+
+  return (
+    <input
+      style={{ backgroundColor: theme.background, color: theme.fontColor }}
+      placeholder={placeholder}
+    />
+  );
 }
 
 export default Input;

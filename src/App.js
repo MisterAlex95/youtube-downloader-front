@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Searchbar, Tools } from "./components";
+import { Searchbar, Tools, VideoList } from "./components";
 import { ThemeContext } from "./contexts";
 import "./reset.css";
 import "./App.css";
@@ -18,7 +18,7 @@ function App() {
         <Searchbar />
         <Tools />
         <div className="viewer"></div>
-        <div className="results"></div>
+        <VideoList />
         <span onClick={switchTheme}>{darkTheme ? "🌞" : "🌙"}</span>
       </div>
     </Context.Provider>

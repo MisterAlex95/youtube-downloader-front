@@ -22,7 +22,6 @@ export default function fetchVideos(dispatch, options = {}) {
 
   return axios(req)
     .then(response => {
-      console.log(response.data);
       dispatch({ type: FETCHED, data: response.data });
       return response.data;
     })

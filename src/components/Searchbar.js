@@ -5,7 +5,7 @@ import { fetchVideos } from "../modules/search/actions/";
 
 function Searchbar() {
   const [search, setSearch] = useState("");
-  const [_, dispatch] = useReducer(reducer);
+  const [, dispatch] = useReducer(reducer);
 
   const launchFetchRequest = () => {
     if (search) {
