@@ -8,9 +8,14 @@ export default function downloadVideo(dispatch, options = {}) {
   return axios
     .post(process.env.REACT_APP_URL_API, {
       url: options.url,
-      tagTitle: options.tagTitle,
-      tagArtist: options.tagArtist,
-      tagAlbum: options.tagAlbum
+      tagTitle: options.title,
+      tagArtist: options.artist,
+      tagAlbum: options.album
+    }, {
+        headers: {
+          "x-auth-token": process.env.REACT_APP_TOKEN,
+          "Content-Type": "application/json"
+        }
     })
     .then(() => {
       dispatch({ type: DOWNLOADED });
