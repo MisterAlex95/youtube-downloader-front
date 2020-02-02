@@ -19,6 +19,11 @@ function Searchbar() {
         placeholder="Search..."
         value={search}
         onChange={e => setSearch(e.target.value)}
+        onKeyPress={event => {
+          if (event.key === "Enter") {
+            launchFetchRequest();
+          }
+        }}
       />
       <Button title="Search" onClick={launchFetchRequest} />
     </div>
