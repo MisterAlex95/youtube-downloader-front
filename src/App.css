@@ -91,7 +91,12 @@ input:focus {
   font-weight: bold;
 }
 
-.tools button {
+.tools .button {
+  display: flex;
+  width: inherit;
+}
+
+.tools .button button {
   display: flex;
   margin: 10px;
   width: 50%;

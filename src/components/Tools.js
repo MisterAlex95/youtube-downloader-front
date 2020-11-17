@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Input, Button } from "./";
 import GlobalContext from "../contexts/";
-import { downloadVideo } from "../modules/video/actions/";
+import { addVideoToPlex, downloadVideo } from "../modules/video/actions/";
 
 function Tools() {
   const [title, setTitle] = useState();
@@ -13,6 +13,17 @@ function Tools() {
   const videoDispatch = context.dispatchs.video;
 
   const postVideo = () => {
+    if (videoState.video && title && artist) {
+      addVideoToPlex(videoDispatch, {
+        title,
+        artist,
+        album,
+        url: "https://www.youtube.com/watch?v=" + videoState.video.id.videoId
+      });
+    }
+  };
+
+  const getVideo = () => {
     if (videoState.video && title && artist) {
       downloadVideo(videoDispatch, {
         title,
@@ -39,7 +50,10 @@ function Tools() {
           onChange={e => setAlbum(e.target.value)}
         />
       </span>
-      <Button title="Download" onClick={postVideo} />
+      <span className="button">
+        <Button title="Download" onClick={getVideo} />
+      <Button title="Add To Plex" onClick={postVideo} />
+      </span>
     </div>
   );
 }
